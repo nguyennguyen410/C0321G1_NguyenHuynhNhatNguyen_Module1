@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>may tinh</title>
+</head>
+<body>
+    <form>
+        <p id="hienthi"></p>
+        <table border="1">
+            <tr>
+                <td colspan="6">
+                    <input type="text" id="pheptoan">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="(" id="ngoactrai" onclick="trai()"></td>
+                <td><input type="button" value=")" id="ngoacphai" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="%" id="phantram" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="reset" value=AC id="reset"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" id="so7" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="8" id="so8" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="9" id="so9" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="/" id="chia" onclick="pheptoan.value+=this.value"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" id="so4" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="5" id="so5" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="6" id="so6" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="*" id="nhan" onclick="pheptoan.value+=this.value"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" id="so1" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="2" id="so2" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="3" id="so3" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="-" id="tru" onclick="pheptoan.value+=this.value"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" id="so0" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="." id="cham" onclick="pheptoan.value+=this.value"></td>
+                <td><input type="button" value="=" id="bang" onclick="pheptoan.value=eval(pheptoan.value)"></td>
+                <td><input type="button" value="+" id="cong" onclick="pheptoan.value+=this.value"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function trai() {
+            let a = document.getElementById("ngoactrai").value;
+            document.getElementById("pheptoan").value=a;
+        }
+    </script>
+</body>
+</html>
