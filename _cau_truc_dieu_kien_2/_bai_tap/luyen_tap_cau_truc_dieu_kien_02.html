@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyen tap dieu kien 02</title>
+</head>
+<body>
+<form>
+    <h3>Bai 1: Chuyen tu do C sang do F</h3>
+    <input type="text" id="doc">
+    <input type="button" value="chuyen doi" onclick="tinh()">
+    <p id="hienthi"></p><br>
+</form>
+<script>
+    function tinh() {
+        let a = parseFloat(document.getElementById("doc").value);
+        let b = a * 9 / 5 + 32;
+        document.getElementById("hienthi").innerText = b + "do F";
+    }
+</script>
+
+<form>
+    <h3>Bai 2: Chuyen tu met sang feet</h3>
+    <input type="text" id="nhapmet">
+    <input type="button" value="chuyen doi" onclick="tinhmet()">
+    <p id="hienthi1"></p><br>
+</form>
+<script>
+    function tinhmet() {
+        let a = parseFloat(document.getElementById("nhapmet").value);
+        let b;
+        if (a < 0)
+            document.getElementById("hienthi1").innerText = "nhap khong dung";
+        else {
+            b = a * 3.2808;
+            document.getElementById("hienthi1").innerText = b + " feet";
+        }
+    }
+</script>
+
+<form>
+    <h3>Bai 3: Tinh dien tich hinh vuong</h3>
+    <input type="text" id="nhapa">
+    <input type="button" value="Tinh dien tich" onclick="tinhdthv()">
+    <p id="hienthi2"></p><br>
+</form>
+<script>
+    function tinhdthv() {
+        let a = parseFloat(document.getElementById("nhapa").value);
+        let b;
+        if (a < 0)
+            document.getElementById("hienthi2").innerText = "nhap khong dung";
+        else {
+            b = a * a;
+            document.getElementById("hienthi2").innerText = "dien tich la:" + b;
+        }
+    }
+</script>
+
+<form>
+    <h3>Bai 4: Tinh dien tich hinh chu nhat</h3>
+    <input type="text" id="dai" placeholder="chieu dai">
+    <input type="text" id="rong" placeholder="chieu rong">
+    <input type="button" value="Tinh dien tich" onclick="tinhdthcn()">
+    <p id="hienthi3"></p><br>
+</form>
+<script>
+    function tinhdthcn() {
+        let a = parseFloat(document.getElementById("dai").value);
+        let b = parseFloat(document.getElementById("rong").value);
+        if (a < 0 || b < 0)
+            document.getElementById("hienthi3").innerText = "nhap khong dung";
+        else {
+            let c = a * b;
+            document.getElementById("hienthi3").innerText = "Dien tich la:" + c;
+        }
+    }
+</script>
+
+<form>
+    <h3>Bai 5: Tinh dien tich tam giac vuong</h3>
+    <input type="text" id="canha" placeholder="Canh day">
+    <input type="text" id="canhb" placeholder="Chieu cao">
+    <input type="button" value="Tinh dien tich" onclick="tinhdttg()">
+    <p id="hienthi4"></p><br>
+</form>
+<script>
+    function tinhdttg() {
+        let a = parseFloat(document.getElementById("canha").value);
+        let b = parseFloat(document.getElementById("canhb").value);
+        if (a < 0 || b < 0)
+            document.getElementById("hienthi4").innerText = "nhap khong dung";
+        else {
+            let dt = (a * b) / 2
+            document.getElementById("hienthi4").innerText = "Dien tich la:" + dt;
+        }
+    }
+</script>
+
+<form>
+    <h3>Bai 6: Giai phuong trinh bac 1: ax + b = 0</h3>
+    <input type="text" id="nhapa1" placeholder="Nhap a">
+    <input type="text" id="nhapb1" placeholder="Nhap b">
+    <input type="button" value="Tinh PTB1" onclick="tinhptb1()">
+    <p id="hienthi5"></p><br>
+</form>
+<script>
+    function tinhptb1() {
+        let a = parseFloat(document.getElementById("nhapa1").value);
+        let b = parseFloat(document.getElementById("nhapb1").value);
+        if (a == 0) {
+            if (b == 0)
+                document.getElementById("hienthi5").innerText = "PT vo so nghiem";
+            else
+                document.getElementById("hienthi5").innerText = "PT vo nghiem";
+        } else {
+            let x = -b / a;
+            document.getElementById("hienthi5").innerText = "Gia tri x la:" + x;
+        }
+    }
+</script>
+
+<form>
+    <h3>Bai 7: Giai phuong trinh bac 2: ax2 + bc +c = 0</h3>
+    <input type="text" id="nhapa2" placeholder="Nhap a">
+    <input type="text" id="nhapb2" placeholder="Nhap b">
+    <input type="text" id="nhapc2" placeholder="Nhap c">
+    <input type="button" value="Tinh PTB2" onclick="tinhptb2()">
+    <p id="hienthi6"></p><br>
+</form>
+<script>
+    function tinhptb2() {
+        let a = parseFloat(document.getElementById("nhapa2").value);
+        let b = parseFloat(document.getElementById("nhapb2").value);
+        let c = parseFloat(document.getElementById("nhapc2").value);
+        if (a == 0) {
+            if (b == 0) {
+                if (c == 0)
+                    document.getElementById("hienthi6").innerText = "PT vo so nghiem";
+                else
+                    document.getElementById("hienthi6").innerText = "PT vo nghiem";
+            } else {
+                let x = -c / b;
+                document.getElementById("hienthi6").innerText = "Gia tri x la:" + x;
+            }
+        } else {
+            let dt = b * b - (4 * a * c);
+            if (dt < 0)
+                document.getElementById("hienthi6").innerText = "PT vo nghiem";
+            else if (dt == 0) {
+                let xx = -b / (2 * a);
+                document.getElementById("hienthi6").innerText = "PT co nghiem kep" + xx;
+            } else {
+                let x1 = (-b + Math.sqrt(dt)) / (2 * a);
+                let x2 = (-b - Math.sqrt(dt)) / (2 * a);
+                document.getElementById("hienthi6").innerText = "PT co nghiem x1: " + x1 + " va x2:" + x2;
+            }
+        }
+    }
+</script>
+
+<form>
+    <h3>Bai 8: Kiem tra tuoi</h3>
+    <input type="text" id="tuoi" placeholder="Nhap tuoi">
+    <input type="button" value="Kiem tra" onclick="tinhtuoi()">
+    <p id="hienthi8"></p><br>
+</form>
+<script>
+    function tinhtuoi() {
+        let a = parseFloat(document.getElementById("tuoi").value);
+        if (a <= 0 || a > 120)
+            document.getElementById("hienthi8").innerText = "Khong phai tuoi 1 nguoi";
+        else {
+            document.getElementById("hienthi8").innerText = "So tuoi la:" + a;
+        }
+    }
+</script>
+
+<form>
+    <h3>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</h3>
+    <input type="text" id="nhapa3" placeholder="Nhap a">
+    <input type="text" id="nhapb3" placeholder="Nhap b">
+    <input type="text" id="nhapc3" placeholder="Nhap c">
+    <input type="button" value="Kiem tra" onclick="kiemtratg()">
+    <p id="hienthi9"></p><br>
+</form>
+<script>
+    function kiemtratg() {
+        let a = parseFloat(document.getElementById("nhapa3").value);
+        let b = parseFloat(document.getElementById("nhapb3").value);
+        let c = parseFloat(document.getElementById("nhapc3").value);
+        if (a <= 0 || b <= 0 || c <= 0)
+            document.getElementById("hienthi9").innerText = "Nhap sai";
+        else if (a + b > c && b + c > a && a + c > b)
+            document.getElementById("hienthi9").innerText = "Day la 3 canh cua tam giac";
+        else document.getElementById("hienthi9").innerText = "Khong phai la 3 canh cua tam giac";
+    }
+</script>
+
+<form>
+    <h3>Bài 10: Viết chương trình tính giá điện.</h3>
+    <input type="text" id="sodien">
+    <input type="button" value="tinhtiendien" onclick="tinhdien()">
+    <p id="hienthi10"></p>
+</form>
+<script>
+    function tinhdien() {
+        let a = parseFloat(document.getElementById("sodien").value);
+        let b;
+        if(a<=50)
+            b = 1549 * a;
+        else if(a<=100)
+            b = 1549 * 50 + 1600 * (a - 50) ;
+        else if(a<=200)
+            b = 1549 * 50 + 1600 * 50 + 1858 * (a - 100);
+        else if (a<=300)
+            b = 1549 * 50 + 1600 * 50 + 1858 * 100 + 2340 * (a - 200);
+        else if (a<=400)
+            b = 1549 * 50 + 1600 * 50 + 1858 * 100 + 2340 * 100 + 2615 * (a - 300);
+        else b = 1549 * 50 + 1600 * 50 + 1858 * 100 + 2340 * 100 + 2615 * 100 + (a - 400) * 2701;
+        document.getElementById("hienthi10").innerText = "Tien dien: "+b;
+    }
+</script>
+
+<form>
+    <h3>Bài 11: Viết chương trình tính thuế thu nhập cá nhân.</h3>
+    <input type="text" id="luong">
+    <input type="button" value="tinhthue" onclick="tinhthue()">
+    <p id="hienthi11"></p>
+</form>
+<script>
+    function tinhthue() {
+        let a = parseFloat(document.getElementById("luong").value);
+        let b;
+        if(a<=5)
+            b = a * 5 / 100;
+        else if(a<=10)
+            b = 5 * 5 / 100 + 10 / 100 * (a - 5) ;
+        else if(a<=18)
+            b = 5 * 5 / 100 + 5 * 10 / 100 + (a - 10) * 15 / 100;
+        else if (a<=32)
+            b = 5 * 5 / 100 + 5 * 10 / 100 + 8 * 15 / 100 + (a - 18) * 20 / 100;
+        else if (a<=52)
+            b = 5 * 5 / 100 + 5 * 10 / 100 + 8 * 15 / 100 + 14 * 20 / 100 + (a - 32) * 25 / 100;
+        else b = 5 * 5 / 100 + 5 * 10 / 100 + 8 * 15 / 100 + 14 * 20 / 100 + 20 * 25 / 100 + (a - 52)*30;
+        document.getElementById("hienthi11").innerText = "Thue TNCN la: "+b;
+    }
+</script>
+
+<form>
+    <h3>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h3>
+    <input type="text" id="tiengui" placeholder="nhap tien gui">
+    <input type="text" id="sonam" placeholder="nhap nam">
+    <input type="button" value="tinhlai" onclick="tinhlai()">
+    <p id="hienthi12"></p>
+</form>
+<script>
+    function tinhlai() {
+        let a = parseFloat(document.getElementById("tiengui").value);
+        let b = document.getElementById("sonam").value;
+        switch (b) {
+            case '1':
+            {let c = a + a * 5 / 100;
+                document.getElementById("hienthi12").innerText = "Tien + lai suat la: "+c;
+                break;}
+            case '2':
+            {let c =  (a + a * 5 / 100) + ((a + (a * 5 / 100)) * 6 / 100);
+                document.getElementById("hienthi12").innerText = "Tien + lai suat la: "+c;
+                break;}
+            case '3':
+            {let c = ((a + a * 5 / 100) + ((a + (a * 5 / 100)) * 6 / 100)) + (((a + a * 5 / 100) + ((a + (a * 5 / 100)) * 6 / 100)) * 7 / 100);
+                document.getElementById("hienthi12").innerText = "Tien + lai suat la: "+c;
+                break;}
+        }
+    }
+</script>
+</body>
+</html>

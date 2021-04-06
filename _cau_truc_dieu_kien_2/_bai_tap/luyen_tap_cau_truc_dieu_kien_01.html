@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau truc dieu kien 01</title>
+</head>
+<body>
+    <!--<script>
+        let a = parseFloat(prompt("nhap a:"));
+        let b = parseFloat(prompt("nhap b:"));
+        if(a%b==0){
+            alert("a chia het cho b");
+        }else{
+            alert("a khong chia het cho b:")
+        }
+    </script>-->
+
+    <!--<script>
+         let tuoi = parseInt(prompt("nhap tuoi:"));
+         if (tuoi>=16){
+             alert("du tuoi hoc lop 10!");
+         }else {
+             alert("khong du tuoi!");
+         }
+    </script>-->
+
+    <!--<script>
+        let a = parseInt(prompt("nhap so a bat ky:"));
+        if(a==0){
+            alert("a bang 0");
+        }else if(a>0){
+            alert("a lon hon 0");
+        }else{
+            alert("a be hon 0");
+        }
+    </script>-->
+
+    <!--<script>
+        let a = parseInt(prompt("nhap so a bat ky:"));
+        let b = parseInt(prompt("nhap so b bat ky:"));
+        let c = parseInt(prompt("nhap so c bat ky:"));
+        if(a>b){
+            if(a>c)
+                alert("so lon nhat la:"+a);
+            else
+                alert("so lon nhat la:"+c);
+        }else{
+            if(b>c)
+                alert("so lon nhat la:"+b);
+            else alert("so lon nhat la:"+c)
+        }
+    </script>-->
+
+    <!--<form>
+        <table>
+            <tr>
+                <td>Diem giua ky</td>
+                <td>Diem cuoi ky</td>
+                <td>Diem trung binh (cuoi ky nhan 2 cong giua ky chia 3)</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="giuaky"></td>
+                <td><input type="text" id="cuoiky"></td>
+                <td><input type="text" id="trungbinh"></td>
+            </tr>
+        </table>
+        <input type="button" value="tinhtrungbinh" onclick="tinh()">
+        <p id="loai"></p>
+    </form>
+    <script>
+        function tinh() {
+            let a = parseFloat(document.getElementById("giuaky").value);
+            let b = parseFloat(document.getElementById("cuoiky").value);
+            let c = (b*2+a)/3;
+            document.getElementById("trungbinh").value=c;
+            if(c>=8.0)
+                document.getElementById("loai").innerText="Gioi";
+            else if(c>=7) document.getElementById("loai").innerText="Kha";
+            else if(c>=5.5) document.getElementById("loai").innerText="Trung Binh";
+            else if(c>=3.5) document.getElementById("loai").innerText="Yeu";
+            else document.getElementById("loai").innerText="kem";
+        }
+    </script>-->
+
+    <!--<form>
+       <input type="text" id="doanhso">
+        <input type="button" value="tinhdoanhso" onclick="tinh()">
+        <p id="hienthi"></p>
+    </form>
+    <script>
+        function tinh() {
+            let a = parseFloat(document.getElementById("doanhso").value);
+            let b;
+            if(a>=100000000)
+                 b = a/100*10;
+            else if(a>=70000000)
+                 b = a/100*7;
+            else if(a>=50000000)
+                 b = a/100*5;
+            else b = "khong co hoa hong"
+
+            document.getElementById("hienthi").innerText="hoa hong la:"+b;
+        }
+    </script>-->
+
+    <form>
+        <input type="text" id="sophut">
+        <input type="button" value="tinhcuoc" onclick="tinh()">
+        <p id="hienthi"></p>
+    </form>
+    <script>
+        function tinh() {
+            let a = parseFloat(document.getElementById("sophut").value);
+            let b;
+            if(a<=50)
+                b = 25000 + 600*a;
+            else if(a<=200)
+                b = 25000 + 600*50 + 400*(a-50);
+            else
+                b = 25000+ 600*50 + 400*150 + 200 * (a-200);
+            document.getElementById("hienthi").innerText="tien cuoc la:"+b;
+        }
+    </script>
+</body>
+</html>
