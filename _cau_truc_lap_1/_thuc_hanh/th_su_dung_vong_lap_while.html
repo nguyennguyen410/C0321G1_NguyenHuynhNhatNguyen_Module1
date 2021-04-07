@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 1</title>
+</head>
+<body>
+<!--Viết chương trình nhận vào một số từ hộp thoại,
+việc nhập kết thúc khi người dùng nhập vào giá trị -1.
+Mỗi giá trị nhập được sẽ được hiển thị ra và thực hiện tính tổng các giá trị đó.-->
+
+    <script>
+        let n = parseInt(prompt("nhap n:"));
+        alert(n);
+        let total = 0;
+        while (n!=-1){
+            n = parseInt(prompt("nhap n tiep theo:"));
+            alert(n);
+            total+=n;
+        }
+        alert("tong cac so vua nhap la:"+total);
+
+    </script>
+
+</body>
+</html>
