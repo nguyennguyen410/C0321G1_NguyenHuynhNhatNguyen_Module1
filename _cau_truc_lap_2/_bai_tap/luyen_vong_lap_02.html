@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vong lap 02</title>
+</head>
+<body>
+<!--Bai 01:
+<script>
+    let num = parseInt(prompt("nhap so luong"));
+    let count = 2;
+    let text = "0,1";
+    let a = 0;
+    let b = 1;
+    let c;
+    while (count < num) {
+        c = a + b;
+        text = text + "," + c;
+        count++;
+        let temp = '';
+        temp = b;
+        a = temp;
+        b = c;
+    }
+    alert(num + "so fibonaci la:" + text);
+</script>-->
+
+<!--Bai 02:
+<script>
+    let a = parseInt(prompt("nhap so:"));
+    let gt = 1;
+    for(let i=a;i>=1;i&#45;&#45;){
+        gt = gt * i;
+    }
+    alert(a + " Giai thua la: " + gt);
+</script>-->
+
+<!--<script>
+    let n = 5;
+    for(let i=0;i<n;i++) {
+        for(let j=0;j<=i;j++) {
+            document.write(" * ");
+        }
+        document.write("<br/>");
+    }
+</script>-->
+
+<!--<script>
+    let n = 5;
+    for(let i=0;i<=n;i++) {
+        for(let j=5;j>i;j&#45;&#45;) {
+            document.write(" * ");
+        }
+        document.write("<br/>")
+    }
+</script>-->
+
+<!--<script>
+    let n = 5;
+    for(let i=0;i<5;i++) {
+        for(let j=1;j<=5;j++) {
+            if(j>=n){
+                document.write("*");
+            }
+            else document.write("&nbsp;&nbsp;");
+        }
+        document.write("<br/>");
+        n&#45;&#45;;
+    }
+</script>-->
+
+<!--<script>
+    let n = 5;
+    for(let i=1;i<=5;i++) {
+        for(let j=1;j<=5;j++) {
+            if(j<i){
+                document.write("&nbsp;&nbsp;");
+            }
+            else document.write("*");
+        }
+        document.write("<br/>");
+    }
+</script>-->
+
+<!--<script>
+    for(let i=1;i<=7;i++) {
+        for(let j=1;j<=21;j++) {
+            if(i==1 || j==1 || j==21 || i==7){
+                document.write("*");
+            }
+            else document.write("&nbsp;&nbsp;");
+        }
+        document.write("<br/>");
+    }
+</script>-->
+
+<!--<script>
+    let a = parseFloat(prompt("Nhap so tien gui"));
+    let b = parseInt(prompt("nhap so nam gui"));
+    for(let i=1; i<=b;i++){
+        a = a + (a*7/100);
+    }
+    alert("Tong tien sau "+b+" nam la: "+a);
+</script>-->
+
+<script>
+    for(let i=1; i<=7;i++){
+        for (let j=1; j<=7; j++){
+            if(i==1 && (j==2 || j==3 || j==5 || j==6)){
+                document.write("*");
+            }
+            if(i==2 && (j==1 || j==4 || j==7)){
+                document.write("*");
+            }
+            if(i==3 && (j==1 || j==7)){
+                document.write("*");
+            }
+            if(i==4 && (j==1 || j==7)){
+                document.write("*");
+            }
+            if(i==5 && (j==2 || j==6)){
+                document.write("*");
+            }
+            if(i==6 && (j==3 || j==5)){
+                document.write("*");
+            }
+            if(i==7 && j==4){
+                document.write("*");
+            }
+            else document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        }
+        document.write("<br/>");
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyen vong lap 01</title>
+</head>
+<body>
+    <!--Bai 01
+    <script>
+        for(let i=1;i<=100;i++){
+            alert(i);
+            if(i==99)
+                alert("ket thuc");
+        }
+    </script>-->
+
+    <!--Bai 02
+    <script>
+        do {
+            let a = parseInt(prompt("nhap nhiet do"));
+            if(a>100) alert("yeu cau giam nhiet do");
+            if(a<20) alert("yeu cau tang nhiet do");
+        }while(a<20 || a>100);
+    </script>-->
+
+    <!--Bai 03
+    <script>
+        let num = parseInt(prompt("nhap so luong"));
+        let count = 2;
+        let text = "0,1";
+        let a = 0;
+        let b = 1;
+        let c;
+        while (count<num){
+            c = a + b;
+            text = text +","+ c;
+            count++;
+            let temp = '';
+            temp = b;
+            a = temp;
+            b=c;
+        }
+
+        alert(num +"so fibonaci dau tien la:"+text);
+    </script>-->
+
+    <!--Bai 04
+    <script>
+        let num = parseInt(prompt("nhap so luong"));
+        let count = 2;
+        let a = 0;
+        let b = 1;
+        let c;
+        while (count<num){
+            c = a + b;
+            let temp = '';
+            temp = b;
+            a = temp;
+            b=c;
+            if(b%5==0){
+                alert("so fibo dau tien chia het cho 5 la:"+b);
+                break;
+            }
+        }
+    </script>
+-->
+
+    <!--Bai 05:
+    <script>
+        let num = 20;
+        let count = 2;
+        let a = 0;
+        let b = 1;
+        let c;
+        let total = 1;
+        while (count<num){
+            c = a + b;
+            total = total + c;
+            count++;
+            let temp = '';
+            temp = b;
+            a = temp;
+            b=c;
+        }
+
+        alert("Tong cua "+ num +"so fibonaci dau tien la:"+total);
+    </script>-->
+
+    <!--Bai 06:
+        <script>
+            let total=0;
+            for(let i=1;i<=30;i++){
+                total = total + (7 * i);
+            }
+            alert("tong cua 30 so dau tien chia het cho 7 la: "+total);
+        </script>-->
+
+    <!--Bai07:
+    <script>
+        for(let i=1;i<=100;i++){
+            if(i%3==0 && i%5==0){
+                console.log("fizzbuzz");
+            }
+            if(i%3==0 && i%5!=0){
+                console.log("fizz");
+            }
+            if(i%3!=0 && i%5==0){
+                console.log("buzz");
+            }
+            if(i%3!=0 && i%5!=0){
+                console.log(i);
+            }
+        }
+    </script>-->
+
+    <!--Bai 08:
+    <h2>Game doan so:</h2>
+    <form>
+        <input type="button" value="Bat dau" onclick="doanso()">
+    </form>
+    <script>
+        function doanso() {
+            let a = parseInt(prompt("nhap khoang bat dau:"));
+            let b = parseInt(prompt("nhap khoang ket thuc:"));
+            let c = Math.floor(Math.random()*(b-a))+a;
+            do{
+                var d = parseInt(prompt("Nhap so can doan:"));
+
+            }while (d!=c);
+            alert("Win");
+        }
+    </script>-->
+
+</body>
+</html>

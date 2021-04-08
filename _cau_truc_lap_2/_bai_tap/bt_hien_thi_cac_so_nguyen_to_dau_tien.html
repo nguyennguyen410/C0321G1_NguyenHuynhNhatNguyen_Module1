@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nguyen to</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("nhap so luong"));
+        let count = 0;
+        let n = 2;
+        let text = "";
+        while (count<num){
+               if(n==2){
+                   text = text + n;
+                   n++;
+                   count++;
+               }else{
+                   let count2 =0;
+                   for(let i = 2;i<=n/2;i++){
+                       if(n%i==0) count2++;
+                   }
+                   if(count2 == 0){
+                       text = text + n;
+                       count++;
+                   }
+                   n++;
+               }
+        }
+        alert(num +"so nguyen to dau tien la:"+text);
+    </script>
+</body>
+</html>
