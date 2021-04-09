@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body >
+	<form>
+		<table>
+			<tr>
+				<td width="200px"><img id="h1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_djD5zfQPpWA2JdkaQCyFdvliEcspu8UKw&usqp=CAU" style="width: 70px;height: 70px" onclick="a1()"></td>
+				<td><h3>GOOD</h3></td>
+			</tr>
+			<tr>
+				<td width="200px"><img id="h2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_djD5zfQPpWA2JdkaQCyFdvliEcspu8UKw&usqp=CAU" style="width: 70px;height: 70px" onclick="b1()"></td>
+				<td><h3>FAST</h3></td>
+			</tr>
+			<tr>
+				<td width="200px"><img id="h3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_djD5zfQPpWA2JdkaQCyFdvliEcspu8UKw&usqp=CAU" style="width: 70px;height: 70px" onclick="c1()"></td>
+				<td><h3>CHEAP</h3></td>
+			</tr>
+		</table>
+	</form>
+	<script>
+
+		let x1 = document.getElementById('h1');
+
+		function a1() {
+			x1.style.position = 'relative';
+			// x1.style.left = '0px';
+			if ((parseInt(x1.style.left) == 0)) {
+				x1.style.left = parseInt(x1.style.left) + 75 + 'px';
+			} else {
+				x1.style.left = '0px'
+			}
+			if ((parseInt(x1.style.left) == 75) && (parseInt(x2.style.left) == 75)) {
+				x3.style.left = '0px';
+			}
+		}
+
+		let x2 = document.getElementById('h2');
+
+		function b1() {
+			x2.style.position = 'relative';
+			// x2.style.left = '0px';
+			if ((parseInt(x2.style.left) == 0)) {
+				x2.style.left = parseInt(x2.style.left) + 75 + 'px';
+			} else {
+				x2.style.left = '0px'
+			}
+			if ((parseInt(x2.style.left) == 75) && (parseInt(x3.style.left) == 75)) {
+				x1.style.left = '0px';
+			}
+		}
+
+		let x3 = document.getElementById('h3');
+
+		function c1() {
+			x3.style.position = 'relative';
+			// x3.style.left = '0px';
+			if ((parseInt(x3.style.left) == 0)) {
+				x3.style.left = parseInt(x3.style.left) + 75 + 'px';
+			} else {
+				x3.style.left = '0px'
+			}
+			if ((parseInt(x3.style.left) == 75) && (parseInt(x1.style.left) == 75)) {
+				x2.style.left = '0px';
+			}
+		}
+
+	</script>
+</body>
+</html>
