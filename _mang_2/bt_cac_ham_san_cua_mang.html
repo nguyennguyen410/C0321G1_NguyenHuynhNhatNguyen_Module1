@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ham co san</title>
+</head>
+<body>
+    <!--<script>
+        let a = ["red","green","white","black"];
+        a.join(",");
+        alert(a);
+    </script>-->
+
+    <!--<script>
+        let a = prompt("nhap so:");
+        let b = [a[0]];
+        for(let i=1;i<a.length;i++){
+            if(a[i-1]%2==0 && a[i]%2==0){
+                b.push("-",a[i]);
+            }
+            else b.push(a[i]);
+
+        }
+        alert(b.join(''));
+    </script>-->
+
+    <script>
+        let a = prompt("Nhap chuoi can chuyen:");
+        let b = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let c = "abcdefghijklmnopqrstuvwxyz";
+        let d = [];
+        for (let i = 0; i<a.length;i++){
+            if(b.indexOf(a[i])!= -1){
+                d.push(a[i].toLowerCase());
+            }else if(c.indexOf(a[i]) != -1){
+                d.push(a[i].toUpperCase());
+            }
+            else {
+                d.push(a[i]);
+            }
+        }
+        alert(d.join(''));
+    </script>
+
+</body>
+</html>
