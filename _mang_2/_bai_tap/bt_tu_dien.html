@@ -11,20 +11,16 @@
         <p id="hienthi"></p>
     </form>
     <script>
-        let a = ["hi","help","win","good"];
-        let b = ["xin chao","giup","chien thang","tot"];
-        let g = document.getElementById("tunhap").value;
-        let c = [];
-        c[0] = g;
         function tim() {
+            let a = ["hi","help","win","good"];
+            let b = ["xin chao","giup","chien thang","tot"];
+            let g = document.getElementById("tunhap").value;
             for(let i = 0; i<a.length;i++){
-                let d = a[i].indexOf(c[0]);
-                if(d!=-1){
+                if(a[i]==g){
+                    let d = a.indexOf(g);
                     document.getElementById("hienthi").innerText = "tieng viet la:" + b[d];
                 }
-                else  document.getElementById("hienthi").innerText = "khong co";
             }
-
         }
      </script>
 </body>

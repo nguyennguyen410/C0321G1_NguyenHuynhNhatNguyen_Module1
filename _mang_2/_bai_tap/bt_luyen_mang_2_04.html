@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 04</title>
+</head>
+<body>
+    <script>
+        let a = prompt("nhap chuoi can dem tu:");
+        let b = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let count = 1;
+        for(let i = 0; i<a.length; i++){
+            if(b.indexOf(a[i])== -1){
+                count++;
+            }
+        }
+        alert("co tong cong "+count+" tu trong chuoi.");
+    </script>
+</body>
+</html>

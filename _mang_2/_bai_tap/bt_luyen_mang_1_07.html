@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 07</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhap so phan tu cua mang:");
+    let b = new Array(a);
+    for(let i = 0; i<a; i++){
+        b[i] = parseInt(prompt("nhap phan tu thu: "+i));
+    }
+    alert("mang vua nhap la: "+b);
+    let c = parseInt(prompt("nhap gia tri V can tim: "));
+    for(let j = 0; j<a; j++){
+        if(b[j]==c){
+            for (let k = j; k<a;k++){
+                b[k] = b[k +1];
+            }
+        }
+    }
+    b.push('0');
+    alert(b);
+</script>
+
+</body>
+</html>

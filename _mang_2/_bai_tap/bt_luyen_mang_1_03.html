@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 03</title>
+</head>
+<body>
+    <script>
+        let a = prompt("Nhap so phan tu cua mang:");
+        let b = new Array(a);
+        let total = 0;
+        for(let i = 0; i<a; i++){
+            b[i] = prompt("nhap phan tu thu "+i);
+            total= total+parseInt(b[i]);
+        }
+        alert("mang vua nhap la: "+b);
+        let max = b[0];
+        let j;
+        for(j = 1;j<a;j++){
+            if(b[j]>max){
+                max = b[j];
+            }
+        }
+        alert("so lon nhat trong mang la "+max +" o vi tri thu "+ b.indexOf(max));
+        alert("trung binh cua mang la: "+total/a);
+    </script>
+</body>
+</html>

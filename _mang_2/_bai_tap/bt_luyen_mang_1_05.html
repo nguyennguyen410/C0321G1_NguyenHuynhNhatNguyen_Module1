@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 05</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhap so phan tu cua mang:");
+    let b = new Array(a);
+    let count = 0;
+    for(let i = 0; i<a; i++){
+        b[i] = parseInt(prompt("nhap phan tu thu: "+i));
+        if(b[i]<0) count++;
+    }
+    alert("mang vua nhap la: "+b);
+    alert("co " +count+ " so am trong mang");
+
+</script>
+</body>
+</html>
