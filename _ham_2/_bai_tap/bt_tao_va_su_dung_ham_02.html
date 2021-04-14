@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tao su dung ham 02</title>
+</head>
+<body>
+<form>
+    <h3>Bai 01:</h3>
+    <input type="number" placeholder="Nhap so:" id="num" oninput="tinhBP(num.value)">
+    <p>Ket qua: <span id="hienthi"></span></p><br>
+
+    <h3>Bai 02:</h3>
+    <input type="button" value="tinh dien tich" onclick="tinhDTCV()"><br>
+
+    <h3>Bai 03:</h3>
+    <input type="number" placeholder="Nhap so:" id="num1" oninput="tinhGiaiThua(num1.value)">
+    <p>Ket qua: <span id="hienthi1"></span></p><br>
+
+    <h3>Bai 04:</h3>
+    <input type="text" placeholder="Nhap ky tu:" id="text1"> <input type="button" value="Kiem tra" onclick="ktKyTu(text1.value)">
+    <p>Ket qua: <span id="hienthi2"></span></p><br>
+
+    <h3>Bai 05:</h3>
+    <input type="text" placeholder="Nhap so 1:" id="so1"><br>
+    <input type="text" placeholder="Nhap so 2:" id="so2"><br>
+    <input type="text" placeholder="Nhap so 3:" id="so3"><br>
+    <input type="button" value="Kiem tra" onclick="ktNhoNhat()">
+    <p>Ket qua: <span id="hienthi3"></span></p><br>
+
+    <h3>Bai 06:</h3>
+    <input type="number" placeholder="Nhap so:" id="num6" oninput="ktSoAD(num6.value)">
+    <p>Ket qua: <span id="hienthi4"></span></p><br>
+
+    <h3>Bai 07:</h3>
+    <input type="text" placeholder="Nhap so 1:" id="so071"><br>
+    <input type="text" placeholder="Nhap so 2:" id="so072"><br>
+    <input type="button" value="Doi Cho" onclick="doiCho(so071.value,so072.value)">
+    <p>Ket qua: <span id="hienthi5"></span></p><br>
+
+    <h3>Bai 08:</h3>
+    <input type="text" placeholder="Nhap mang:" id="text08"><br>
+    <input type="button" value="Dao Mang" onclick="daoMang()">
+    <p>Ket qua: <span id="hienthi6"></span></p><br>
+
+    <h3>Bai 09:</h3>
+    <input type="button" value="Start 09" onclick="star09()"><br>
+    <p>Ket qua: <span id="hienthi7"></span></p><br>
+</form>
+
+<script>
+    function star09() {
+        let a = prompt("nhap mang: ");
+        let b = prompt("nhap ky tu can tim: ");
+        let c = a.split("");
+        let count = 0;
+        for (let i = 0;i <= c.length; i++){
+            if(c[i]==b){
+                count++;
+            }
+        }
+        if (count!=0){
+            document.getElementById("hienthi7").innerHTML = "so lan xuat hien cua "+b+" la: "+count;
+        }else {
+            document.getElementById("hienthi7").innerText = "-1";
+        }
+    }
+
+    function daoMang() {
+        let a = document.getElementById("text08").value;
+        let b = a.split("");
+        b = b.reverse().join("");
+        //b = b.replace(",","");
+        document.getElementById("hienthi6").innerText = "Mang sau khi dao nguoc la: "+b;
+    }
+
+    function doiCho(a,b) {
+        a = parseFloat(a);
+        b = parseFloat(b);
+        let temp;
+        temp = a;
+        a = b;
+        b = temp;
+        document.getElementById("hienthi5").innerHTML = "Hai so sau khi doi cho la: " +a+" va "+b;
+    }
+
+    function ktSoAD(so06) {
+        let a = parseFloat(so06);
+        if(a==0) document.getElementById("hienthi4").innerHTML = "0";
+        if(a<0) document.getElementById("hienthi4").innerHTML = "false";
+        if(a>0) document.getElementById("hienthi4").innerHTML = "true";
+    }
+
+    function ktNhoNhat() {
+        let a = parseFloat(document.getElementById("so1").value);
+        let b = parseFloat(document.getElementById("so2").value);
+        let c = parseFloat(document.getElementById("so3").value);
+        if(a>b){
+            if(c>b){
+                document.getElementById("hienthi3").innerHTML = "so nho nhat la:" +b;
+            }
+        }else {
+            if(a<c){
+                document.getElementById("hienthi3").innerHTML = "so nho nhat la:" +a;
+            }else {
+                document.getElementById("hienthi3").innerHTML = "so nho nhat la:" +c;
+            }
+        }
+    }
+
+    function ktKyTu(a) {
+        let b = ['0','1','2','3','4','5','6','7','8','9'];
+        let check;
+        if(a[0]=="-"){
+            for(let i = 1; i<a.length;i++){
+                if(b.indexOf(a[i])!=-1){
+                    check = true;
+                }else{
+                    check = false;
+                    break;
+                }
+            }
+        }else if(b.indexOf(a[0])!=-1){
+            for(let j = 1; j<a.length;j++ ){
+                if(b.indexOf(a[j])!=-1){
+                    check = true;
+                }else {
+                    check = false;
+                    break;
+                }
+            }
+        }else {
+            check = false;
+        }
+        document.getElementById("hienthi2").innerHTML = check;
+    }
+
+    function tinhGiaiThua(num1) {
+        let value = 1;
+        for (let i = 1; i<=num1; i++){
+            value = value * i;
+        }
+        document.getElementById("hienthi1").innerHTML = value;
+    }
+
+    function tinhDTCV() {
+        let a = parseFloat(prompt("nhap ban kinh:"));
+        let dt = 3.14 * a * a;
+        let cv = 2 * 3.14 * a;
+        alert("dien tich hinh tron la: "+dt);
+        alert("chu vi la: "+cv);
+    }
+
+    function tinhBP(num) {
+        document.getElementById("hienthi").innerHTML=num*num;
+    }
+</script>
+
+</body>
+</html>

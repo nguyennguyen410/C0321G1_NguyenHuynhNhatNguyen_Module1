@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doi xung</title>
+</head>
+<body>
+    <script>
+        let a = prompt("nhap chuoi: ");
+        let b = a.length-1;
+        let check;
+        for(let i = 0;i<=(a.length/2); i++){
+            if(a[i]!==a[b]){
+                check = false;
+            }else {
+                b--;
+                check = true;
+            }
+        }
+        if(check==true){
+            alert("chuoi doi xung");
+        } else {
+            alert("chuoi khong doi xung");
+        }
+
+        function kiemTraDoiXung(str) {
+            let first = 0;
+            let last = str.length - 1;
+            if (first >= last) {
+                return true;
+            } else if (str[first] != str[last]) {
+                return false;
+            } else {
+                str = str.slice(1, str.length - 1);
+                return kiemTraDoiXung(str);
+            }
+        }
+
+        let st = prompt("nhập vào chuỗi cần kiểm tra");
+        alert(kiemTraDoiXung(st));
+    </script>
+</body>
+</html>

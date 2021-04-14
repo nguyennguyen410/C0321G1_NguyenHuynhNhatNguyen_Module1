@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyen feet met</title>
+</head>
+<body>
+<form>
+    <input type="number" id="met" placeholder="Nhap so met" oninput="metToFeet(met.value)">
+    <p>Feet: <span id="hienthi"></span></p><br>
+    <input type="number" id="feet" placeholder="Nhap so feet" oninput="feetToMet(feet.value)">
+    <p>Met: <span id="hienthi1"></span></p><br>
+</form>
+<script>
+    function metToFeet(value) {
+        value = parseFloat(value);
+        document.getElementById("hienthi").innerHTML = 3.279 * value;
+    }
+    function feetToMet(value) {
+        value = parseFloat(value);
+        document.getElementById("hienthi1").innerHTML = 0.305 * value;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tao su dung ham 01</title>
+</head>
+<body>
+    <form>
+        <h3>Bai 01:</h3>
+        <input type="button" value="Xin chao!" onclick="alertMessage()"><br>
+
+        <h3>Bai 02:</h3>
+        <input type="number" placeholder="Nhap so:" id="num" oninput="tinh(num.value)">
+        <p>Ham tra ve: <span id="hienthi"></span></p><br>
+
+        <h3>Bai 03:</h3>
+        <input type="text" id="thamso1" placeholder="nhap so thu 1">
+        <input type="text" id="thamso2" placeholder="nhap so thu 2">
+        <input type="button" value="Kiem tra" onclick="kiemTra(thamso1.value,thamso2.value)">
+        <p>Ham tra ve: <span id="hienthi1"></span></p><br>
+
+        <h3>Bai 04:</h3>
+        <input type="button" value="Click!!" onclick="addAlert()"><br>
+
+        <h3>Bai 05:</h3>
+        <input type="button" value="Click!!" onclick="startBai5()"><br>
+        <p>Gia tri ngoi sao ban nhap la: <span id="hienthi2"></span></p><br>
+    </form>
+    <script>
+        function startBai5() {
+            let d = prompt("nhap ten ngoi sao:");
+            nhapSao(d);
+        }
+        function nhapSao(c) {
+            let a = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+            let b = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+            let check = false;
+            for (let i = 0; i<a.length; i++){
+                if(a[i]==c){
+                    document.getElementById("hienthi2").innerHTML=b[i];
+                    check = true;
+                }
+            }
+            if(!check){
+                alert("nhap khong dung");
+            }
+        }
+
+        function addAlert() {
+            let resultbai04 = 0;
+            alert(resultbai04);
+            resultbai04 = addNumbers();
+            alert(resultbai04);
+        }
+        function addNumbers() {
+            let firstNum = 4;
+            let secondNum = 8;
+            let resultbai04 = firstNum + secondNum;
+            return resultbai04;
+        }
+
+        function kiemTra(num1,num2) {
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+            if(num1>num2){
+                alert("Vui long nhap so thu 1 nho hon hoac bang so thu 2");
+            }else {
+                document.getElementById("hienthi1").innerHTML = num1 + num2;
+            }
+        }
+
+        function alertMessage() {
+            alert("Xin chao!!!");
+        }
+
+        function tinh(num) {
+            num++;
+            document.getElementById("hienthi").innerHTML=num;
+        }
+    </script>
+</body>
+</html>
