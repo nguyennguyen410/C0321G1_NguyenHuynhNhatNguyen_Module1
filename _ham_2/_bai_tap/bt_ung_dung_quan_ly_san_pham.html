@@ -1,0 +1,96 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quan ly san pham</title>
+</head>
+<body>
+    &lt;!&ndash;<form>
+        <input type="text" placeholder="nhap san pham" id="sanpham">
+        <input type="button" value="ADD" onclick="themSanPham(sanpham.value)"><br>
+        <p id="hienthi"></p>
+    </form>
+    <script>
+        function themSanPham(a) {
+            let elementx = document.getElementById("hienthi").innerHTML;
+            let them = '<p id="a">'+a+'<input type="button" value="EDIT" onclick="sua()">'+'<input type="button" value="XOA" onclick="xoa(a)"></p>';
+            document.getElementById("hienthi").innerHTML = elementx + them;
+        }
+
+    </script>&ndash;&gt;
+    <form>
+            <input type="text" placeholder="nhap san pham" id="sanpham">
+            <input type="button" value="ADD" onclick="themSanPham(sanpham.value)"><br>
+            <p id="hienthi"></p>
+    </form>
+
+    <script>
+        let arr = [];
+        let i = 0;
+        function themSanPham(a) {
+            let elementx = document.getElementById("hienthi").innerHTML;
+            let them = '<p id="a">'+a+'<input type="button" value="EDIT" onclick="suaSanPham()">'+'<input type="button" value="XOA" onclick="xoaSanPham(a)"></p>';
+            document.getElementById("hienthi").innerHTML = elementx + them;
+            arr[i] = a;
+            i++;
+        }
+        function xoaSanPham(b){
+
+        }
+        function suaSanPham(c){
+
+        }
+    </script>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="2"><h3>Add New Product</h3></td>
+    </tr>
+    <tr >
+        <td ><input id="insert" type="text"  ></td>
+        <td><button type="button" onclick="add(),showProduct()">Add</button></td>
+    </tr>
+</table>
+<p id="show"></p>
+
+<script>
+    let product= new Array();
+    function add() {
+        let them=document.getElementById("insert").value;
+        product.push(them);
+        document.getElementById("insert").value="";
+    }
+    function showProduct() {
+        let bang="<table border='1'>";
+        for (let i=0;i<product.length;i++){
+            bang+="<tr>";
+            bang+="<td>"+product[i]+"</td>";
+            bang+="<td>"+'<button type="button"onclick="edit('+i+')">Edit</button>'+"</td>";
+            bang+="<td>"+'<button type="button"onclick="xoa('+i+')">Delete</button>'+"</td>";
+            bang+="</tr>";
+        }
+        bang+="</table>";
+        document.getElementById("show").innerHTML=bang;
+    }
+    function edit(x) {
+        let a=prompt("sửa giá trị");
+        product[x]=a;
+        showProduct();
+    }
+    function xoa(y) {
+        product.splice(y,1);
+        showProduct();
+    }
+</script>
+</body>
+</html>
