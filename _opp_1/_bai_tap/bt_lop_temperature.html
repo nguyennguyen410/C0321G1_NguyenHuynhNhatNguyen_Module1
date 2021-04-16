@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lop temperature</title>
+</head>
+<body>
+    <script>
+        function Temperature(c) {
+            this.doc = c;
+            this.dof = function () {
+                return (this.doc * 1.8)+32;
+            }
+            this.dok = function () {
+                return this.doc + 273.15;
+            }
+        }
+        do {
+            var nhietdo = prompt("nhap nhiet do: ");
+        }while (nhietdo<-273);
+        let Temperature1 = new Temperature(nhietdo);
+        alert("Nhiet do "+Temperature1.doc+" chuyen thanh do F la: "+Temperature1.dof()+" thanh do K la: "+Temperature1.dok());
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lop hinh chu nhat</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        function Rectangle(x,y) {
+            this.width = x;
+            this.height = y;
+            this.area = function () {
+                return this.width * this.height;
+            }
+            this.chuVi = function () {
+                return (this.width + this.height)/2;
+            }
+            this.showRectangle = function () {
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.fillRect(50,50,this.width,this.height);
+            }
+        }
+        let Rectangle1 = new Rectangle(200,100);
+        alert("chu vi la: "+Rectangle1.chuVi());
+        alert("dien tich la: "+Rectangle1.area());
+        Rectangle1.showRectangle();
+
+    </script>
+</body>
+</html>

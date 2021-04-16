@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TH xay dung lop hinh tron</title>
+</head>
+<body>
+    <script>
+        let Circle = function (radius,color) {
+            this.radius = radius;
+            this.color = color;
+            this.getRadius = function () {
+                return this.radius;
+            }
+            this.getColor = function () {
+                return this.color
+            }
+            this.getArea = function () {
+                return this.radius*this.radius*Math.PI;
+            }
+        };
+        let circle = new Circle(2,1151);
+        let radius = circle.getRadius();
+        let color = circle.getColor();
+        let area = circle.getArea();
+        alert("dien tich cua hinh tron co ban kinh "+radius+" va ma mau "+color+" la: "+area);
+
+        let circle1 = new Circle(4,1155);
+        let radius1 = circle1.getRadius();
+        let color1 = circle1.getColor();
+        let area1 = circle1.getArea();
+        alert("dien tich cua hinh tron co ban kinh "+radius1+" va ma mau "+color1+" la: "+area1);
+    </script>
+</body>
+</html>
