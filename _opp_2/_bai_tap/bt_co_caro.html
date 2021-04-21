@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>co caro</title>
+</head>
+<body>
+    <div id="hienthi">
+
+    </div>
+</body>
+<script>
+    class Banco{
+        constructor(row,col) {
+            this.row = row;
+            this.col = col;
+        }
+        setRow(row){
+            this.row = row;
+        }
+        getRow(){
+            return this.row;
+        }
+        setCol(col){
+            this.col = col;
+        }
+        getCol(){
+            return this.col;
+        }
+        display(arr) {
+            let tableString = '<table border="1">';
+            for (let i=0; i<this.getRow();i++){
+                tableString+='<tr>';
+                for (let j =0; j<this.getCol();j++){
+                    tableString+=' <td style="width: 20px;height: 20px" onclick="play('+i+','+j+')">'+arr[i][j]+'</td>'
+                }
+                tableString+='</tr>';
+            }
+            tableString +='</table>';
+            document.getElementById("hienthi").innerHTML = tableString;
+        }
+
+    }
+    let banco = new Banco(20,20);
+    let arr= new Array(banco.getRow());
+    for (let i=0;i<banco.getRow();i++){
+        arr[i]= new Array(banco.getRow());
+        for (let j=0;j<banco.getCol();j++){
+            arr[i][j]='';
+        }
+    }
+    banco.display(arr);
+    let choosePlayer1=true;
+    function checkPlayed(i,j) {
+        if(arr[i][j]=="X"||arr[i][j]=="O"){
+            alert("Trung ket qua!!!")
+            return true;
+        }
+        return false;
+    }
+    function play(i,j) {
+        if(choosePlayer1&&!checkPlayed(i,j)){
+            arr[i][j]="X";
+            choosePlayer1=false;
+           if(checkWin()){
+                alert(" người chơi số 1 thắng")
+            }
+        }else if(!choosePlayer1&&!checkPlayed(i,j)){
+            arr[i][j]="O";
+            choosePlayer1=true;
+            if(checkWin()){
+                alert(" người chơi số 2 thắng")
+            }
+        }
+        banco.display(arr);
+    }
+    function checkWin() {
+        for (let i=0; i<banco.getRow();i++){
+            for (let j =0; j<banco.getCol();j++){
+                if(arr[i][j]=="X"){
+                    if(arr[i][j+1]=="X"&&arr[i][j+2]=="X"&&arr[i][j+3]=="X"&&arr[i][j+4]=="X"){
+                        return true;
+                    }
+                    if(arr[i+1][j]=="X"&&arr[i+2][j]=="X"&&arr[i+3][j]=="X"&&arr[i+4][j]=="X"){
+                        return true;
+                    }
+                    if(arr[i+1][j+1]=="X"&&arr[i+2][j+2]=="X"&&arr[i+3][j+3]=="X"&&arr[i+4][j+4]=="X"){
+                        return true;
+                    }
+                    if(arr[i-1][j+1]=="X"&&arr[i-2][j+2]=="X"&&arr[i-3][j+3]=="X"&&arr[i-4][j+4]=="X"){
+                        return true;
+                    }
+                }else if(arr[i][j]=="O"){
+                    if(arr[i][j+1]=="O"&&arr[i][j+2]=="O"&&arr[i][j+3]=="O"&&arr[i][j+4]=="O"){
+                        return true;
+                    }
+                    if(arr[i+1][j]=="O"&&arr[i+2][j]=="O"&&arr[i+3][j]=="O"&&arr[i+4][j]=="O"){
+                        return true;
+                    }
+                    if(arr[i+1][j+1]=="O"&&arr[i+2][j+2]=="O"&&arr[i+3][j+3]=="O"&&arr[i+4][j+4]=="O"){
+                        return true;
+                    }
+                    if(arr[i-1][j+1]=="O"&&arr[i-2][j+2]=="O"&&arr[i-3][j+3]=="O"&&arr[i-4][j+4]=="O"){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cong tac va bong den</title>
+</head>
+<body>
+    <script>
+        let Switchlamp = function () {
+            this.setStatus = function (status) {
+                this.status = status;
+            }
+            this.getStatus = function () {
+                return this.status;
+            }
+            this.On = function () {
+                return  this.status = true;
+            }
+            this.Off = function () {
+                return this.status = false;
+            }
+
+        }
+        let Lamp = function () {
+            this.checkStatus = function (Switchlamp) {
+                return Switchlamp.getStatus();
+            }
+            this.turnOn = function () {
+                return console.log("den sang");
+            }
+            this.turnOff = function () {
+                return console.log("den tat");
+            }
+        }
+        let switchlamp = new Switchlamp();
+        let lamp = new Lamp();
+        switchlamp.setStatus(false);
+        if (lamp.checkStatus(switchlamp)){
+            lamp.turnOn();
+        }else lamp.turnOff();
+    </script>
+</body>
+</html>
