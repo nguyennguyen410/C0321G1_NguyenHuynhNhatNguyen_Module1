@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IV_02</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhap chuoi ky tu: ");
+    let b = a.split('');
+    for(let i = 0; i<b.length; i++){
+        for(let j = i+1; j<b.length; j++){
+            if(b[i]==b[j]){
+             b.splice(j,1);
+             j--;
+            }
+        }
+    }
+
+    alert("so ky tu khac nhau cua chuoi la: "+b.length);
+    /*c2: dung ham include de kiem tra phan tu mang b nao do co ton tai trong mang c(tao mang c) hay ko
+    neu khong thi day phan tu mang b qua mang c va do dai mang c chinh la ket qua*/
+</script>
+</body>
+</html>

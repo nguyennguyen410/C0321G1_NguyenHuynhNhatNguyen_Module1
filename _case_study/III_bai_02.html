@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>III_02</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhap phan tu cua mang A"));
+    let a = [];
+    for (let i = 0; i < n; i++) {
+        a[i] = parseInt(prompt("nhap phan tu thu " + i));
+    }
+    let nn = parseInt(prompt("Nhap phan tu cua mang B"));
+    let b = [];
+    for (let j = 0; j < nn; j++) {
+        b[j] = parseInt(prompt("nhap phan tu thu " + j));
+    }
+    let temp;
+    for (let k = 0; k < n; k++) {
+        for (let l = k + 1; l < n; l++) {
+            if (a[k] > a[l]) {
+                temp = a[k];
+                a[k] = a[l];
+                a[l] = temp;
+            }
+        }
+    }
+    alert("mang A sau khi sap xep la:" + a);
+    let temp1;
+    for (let k = 0; k < nn; k++) {
+        for (let l = k + 1; l < nn; l++) {
+            if (b[k] > b[l]) {
+                temp = b[k];
+                b[k] = b[l];
+                b[l] = temp;
+            }
+        }
+    }
+    alert("mang B sau khi sap xep la:" + b);
+    let c = []
+    for (let i = 0; i < nn; i++) {
+        if (b.indexOf(a[i]) == -1) {
+            c.push(b[i]);
+        }
+    }
+    alert("mang chua cac phan tu khong co trong A la: " + c);
+</script>
+</body>
+</html>

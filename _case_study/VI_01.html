@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VI_01</title>
+</head>
+<body>
+<h1>Xổ số Codegym</h1>
+<div id="hienthi"></div>
+<input type="button" value="Mua vé" onclick="muaVe()">
+<input type="button" value="Xem kết quả" onclick="xemKetQua()"><br>
+<div id="ketqua"></div>
+<script>
+    class ve_so{
+        constructor(so1,so2,so3,so4,so5,so6) {
+            this.so1 = so1;
+            this.so2 = so2;
+            this.so3 = so3;
+            this.so4 = so4;
+            this.so5 = so5;
+            this.so6 = so6;
+        }
+        setSo1(so1){
+            this.so1 = so1;
+        }
+        setSo2(so2){
+            this.so2 = so2;
+        }
+        setSo3(so3){
+            this.so3 = so3;
+        }
+        setSo4(so4){
+            this.so4 = so4;
+        }
+        setSo5(so5){
+            this.so5 = so5;
+        }
+        setSo6(so6){
+            this.so6 = so6;
+        }
+        getSo1(){
+            return this.so1;
+        }
+        getSo2(){
+            return this.so2;
+        }
+        getSo3(){
+            return this.so3;
+        }
+        getSo4(){
+            return this.so4;
+        }
+        getSo5(){
+            return this.so5;
+        }
+        getSo6(){
+            return this.so6;
+        }
+    }
+    let listSo = [];
+    function muaVe() {
+        let choose = prompt("Ban co 2 lua chon :\n"+
+                "1. Ban muon tu chon so.\n"+
+                "2. He thong tu random"
+        );
+        switch (choose) {
+            case "1":
+                luaChonSo();
+                break;
+            case "2":
+                randomSo();
+                break;
+        }
+    }
+    function luaChonSo() {
+        let so1 = prompt("nhap so thu nhat:");
+        let so2 = prompt("nhap so thu hai:");
+        let so3 = prompt("nhap so thu ba:");
+        let so4 = prompt("nhap so thu bon:");
+        let so5 = prompt("nhap so thu nam:");
+        let so6 = prompt("nhap so thu sau:");
+        let so = new ve_so(so1,so2,so3,so4,so5,so6);
+        listSo.push(so);
+        display();
+    }
+    function randomSo() {
+        let sorandom = new ve_so(Math.floor(Math.random()*100),Math.floor(Math.random()*100),Math.floor(Math.random()*100),
+            Math.floor(Math.random()*100),Math.floor(Math.random()*100),Math.floor(Math.random()*100));
+        listSo.push(sorandom);
+        display();
+    }
+    function display(){
+        let displaystring = "";
+
+        for(let i=0; i<listSo.length; i++ ){
+            displaystring += "Ve so "+(i+1)+": "+
+                    listSo[i].getSo1()+","+
+                listSo[i].getSo2()+","+
+                listSo[i].getSo3()+","+
+                listSo[i].getSo4()+","+
+                listSo[i].getSo5()+","+
+                listSo[i].getSo6()+"<br>"
+        }
+        document.getElementById("hienthi").innerHTML = displaystring;
+    }
+    let ketqua=[];
+    function xemKetQua() {
+        for (let i = 0; i<6; i++){
+            ketqua.push(Math.floor(Math.random()*100));
+        }
+
+        document.getElementById("ketqua").innerHTML = "ve trung giai la: "+ketqua;
+        check();
+    }
+    function check() {
+        let count = 0;
+        for(let i = 0; i<listSo.length; i++){
+            for(let j = 0; j<listSo[i].length; j++){
+                if(listSo[i][j]==ketqua[j]){
+                    count++;
+                }
+            }
+        }
+        if(count == 3){
+            alert("giai khuyen khich");
+        }
+        else if(count ==5){
+            alert("giai nhi");
+        }
+        else if(count == 6){
+            alert("Jackpot");
+        }else{
+            alert("Chuc ban may man lan sau");
+        }
+    }
+
+</script>
+</body>
+</html>

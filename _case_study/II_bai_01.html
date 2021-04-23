@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>II_01</title>
+</head>
+<body>
+<script>
+    do {
+        var sal = parseFloat(prompt("Nhap luong:"));
+    } while (sal <= 0);
+    if (sal >= 15000000) {
+        sal = sal - sal * 20 / 100;
+        alert("Luong sau khi tru thue la: " + sal);
+    } else if (sal < 15000000 && sal > 7000000) {
+        sal = sal - sal * 10 / 100;
+        alert("Luong sau khi tru thue la: " + sal);
+    } else {
+        sal = sal - sal * 5 / 100;
+        alert("Luong sau khi tru thue la: " + sal);
+    }
+</script>
+</body>
+</html>

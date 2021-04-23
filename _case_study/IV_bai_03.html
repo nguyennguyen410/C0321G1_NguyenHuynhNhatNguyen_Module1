@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IV_03</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhap chuoi thu nhat: ");
+    let b = prompt("Nhap chuoi thu hai: ");
+    let e = a.split('');
+    let f = b.split('');
+    let output = [];
+    for(let i = 0; i<e.length; i++){
+        for(j = 0; j<f.length; j++){
+            if(e[i]==f[j]){
+                output+= e[i];
+                f.splice(j,1);
+                e.splice(i,1);
+                j--;
+                i--;
+            }
+        }
+    }
+    alert("So ky tu trung la: "+output.length);
+
+</script>
+</body>
+</html>

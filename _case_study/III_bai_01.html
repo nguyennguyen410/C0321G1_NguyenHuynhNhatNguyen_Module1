@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>III_01</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhap phan tu cua mang A"));
+    let a = [];
+    for (let i = 0; i < n; i++) {
+        a[i] = parseInt(prompt("nhap phan tu thu " + i));
+    }
+        let b = [];
+        let tong = 0;
+        for(let j=0; j<n; j++){
+            tong = tong + a[j]
+            b[j] = tong;
+        }
+        alert("Mang A sau khi prefix sum la:  "+b);
+    </script>
+</body>
+</html>

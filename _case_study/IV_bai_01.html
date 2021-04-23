@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IV_01</title>
+</head>
+<body>
+<script>
+    let c;
+    function nhapChuoi() {
+        c = prompt("Nhap chuoi ky tu");
+        return c;
+    }
+    function chuanHoaChuoi(a) {
+        let b =  a.replace(/\s+/g,' ').trim();
+        b = b.toLowerCase();
+        let arr = b.split(" ");
+        let output = "";
+
+
+        for(let i = 0; i<arr.length; i++){
+            for(let j=0; j < arr[i].length; j++){
+                if(j==0){
+                    output += arr[i].charAt(j).toUpperCase();
+                } else {
+                    output += arr[i].charAt(j);
+                }
+            }
+            output += " ";
+        }
+
+        // console.log(b);
+        // let d = b.toLowerCase();
+        // d[0] = d.charAt(0).toUpperCase();
+        // console.log(d.toUpperCase())
+        // for(let i = 1; i<d.length; i++){
+        //     if(d[i]==' '){
+        //         d[i+1] = d[i+1].toUpperCase();
+        //     }
+        // }
+        alert(output);
+    }
+    nhapChuoi();
+    chuanHoaChuoi(c);
+</script>
+</body>
+</html>

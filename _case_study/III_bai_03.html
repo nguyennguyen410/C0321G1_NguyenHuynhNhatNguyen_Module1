@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>III_03</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhap so phan so:"));
+    let b = [];
+    let c = [];
+    let d = [];
+    for (let i = 0; i < a; i++) {
+        b[i] = parseInt(prompt("nhap tu so"));
+        c[i] = parseInt(prompt("nhap mau so"));
+        d[i] = b[i] / c[i];
+    }
+    let max = d[0];
+    for (let i = 1; i < a; i++) {
+        if (d[i] > max) {
+              max = d[i];
+        }
+    }
+    alert("phan so lon nhat co tu so la: "+b[d.indexOf(max)]+" mau so la: "+c[d.indexOf(max)]);
+</script>
+</body>
+</html>

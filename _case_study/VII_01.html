@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VII</title>
+</head>
+<body>
+<div>
+    <div id = "header">
+        <div>
+            <table width="100%">
+                <tr>
+                   <td><img src="logo.JPG"/></td>
+                    <td><h1>Hệ thống quản lý bài tập Casestudy module1</h1></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <div id = "content">
+        <form>
+            <table  width="100%">
+                <tr>
+                    <td>
+                        <select id="I" onchange="hienthibaiI()">
+                            <option>I_01</option>
+                            <option>I_02</option>
+                            <option>I_03</option>
+                            <option>I_04</option>
+                        </select>
+                    </td>
+                    <td colspan="3" rowspan="7" width="80%" id="display"></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <select id="II">
+                            <option>I_01</option>
+                            <option>I_02</option>
+                            <option>I_03</option>
+                            <option>I_04</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <select id="III">
+                            <option>I_01</option>
+                            <option>I_02</option>
+                            <option>I_03</option>
+                            <option>I_04</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <select id="IV">
+                            <option>I_01</option>
+                            <option>I_02</option>
+                            <option>I_03</option>
+                            <option>I_04</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <select id="V">
+                            <option>I_01</option>
+                            <option>I_02</option>
+                            <option>I_03</option>
+                            <option>I_04</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <select id="VI">
+                            <option>I_01</option>
+                            <option>I_02</option>
+                            <option>I_03</option>
+                            <option>I_04</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <select id="VII">
+                            <option>I_01</option>
+                            <option>I_02</option>
+                            <option>I_03</option>
+                            <option>I_04</option>
+                        </select>
+                    </td>
+
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<script>
+    function hienthibaiI() {
+        if(I.value=="I_01"){
+            document.getElementById("display").innerHTML = "Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m theo hình dưới đây. \n" +
+                "Ví dụ: x = 4, y = 5\n" +
+                "* * * * *\n" +
+                "*          *\n" +
+                "*          *\n" +
+                "* * * * *\n";
+        }
+        if(I.value=="I_02"){
+            document.getElementById("display").innerHTML = "Vẽ tam giác vuông cân rỗng có chiều cao h. Ví dụ: h = 5\n" +
+                "*\n" +
+                "* *\n" +
+                "*    *\n" +
+                "*       *\n" +
+                "* * * * *\n";
+        }
+    }
+</script>
+</body>
+</html>

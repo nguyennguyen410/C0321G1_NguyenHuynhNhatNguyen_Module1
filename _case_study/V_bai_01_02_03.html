@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V_01_02_03</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt("Nhap chi so hang: "));
+    let n = parseInt(prompt("Nhap chi so cot: "));
+    let a = [];
+    for (let i = 0; i < m; i++) {
+        a[i] = [];
+        for (let j = 0; j < n; j++) {
+            a[i][j] = parseInt(prompt("nhap phan tu thu " + i + " " + j));
+        }
+    }
+
+    function tinhTong() {
+        let total = 0;
+        for (let i = 0; i < m; i++) {
+            for (let j = 0; j < n; j++) {
+                total = total + a[i][j];
+            }
+        }
+        alert("tong cua ma tran vua nhap vao la: " + total);
+    }
+
+    tinhTong();
+
+    function checkNguyenTo(a) {
+        if (a < 2) {
+            return false;
+        } else {
+            for (let i = 2; i <= a / 2; i++) {
+                if (i % 2 == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    let count = 0;
+    for (let k = 0; k < m; k++) {
+        for (let l = 0; l < n; l++) {
+            if (checkNguyenTo(a[k][l])) {
+                count++;
+            }
+        }
+    }
+    alert("co tat ca " + count + " so nguyen to trong mang.");
+    let max = a[0][0];
+    let min = a[0][0];
+    function timLonNhat() {
+        for (let k = 0; k < m; k++) {
+            for (let l = 0; l < n; l++) {
+                if (max < a[k][l]) {
+                    max = a[k][l];
+                }
+            }
+        }
+        alert("so lon nhat trong mang la: " + max);
+    }
+    timLonNhat();
+
+    function timNhoNhat() {
+        for (let k = 0; k < m; k++) {
+            for (let l = 0; l < n; l++) {
+                if (min > a[k][l]) {
+                    min = a[k][l];
+                }
+            }
+        }
+        alert("so lon nhat trong mang la: " + min);
+    }
+    timNhoNhat();
+</script>
+</body>
+</html>
